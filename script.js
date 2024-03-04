@@ -37,10 +37,16 @@ document.addEventListener("pages-loaded", () => {
       </a></div>`;
 
       if (member.locationPageMeta) {
+        const memberProvinces = [];
+
+        for (const key in member.locationPageMeta.province) {
+          if (member.locationPageMeta.province[key]) {
+            memberProvinces.push(key);
+          }
+        }
+
         html += `<div class="post__desc-container">
-        <p class="post__desc">${
-          member.locationPageMeta ? member.locationPageMeta.locatie : ""
-        }</p>
+        <p class="post__desc">${memberProvinces.join(", ")}</p>
       </div>`;
       }
       html += `
