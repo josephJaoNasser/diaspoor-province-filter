@@ -68,7 +68,6 @@ document.addEventListener("pages-loaded", () => {
         let { province } = locationPageMeta;
         for (const key in province) {
           if (!provinces.includes(key)) {
-            console.log(key);
             provinces.push(key);
           }
         }
